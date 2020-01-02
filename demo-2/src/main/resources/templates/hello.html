@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello MVC World!</title>
+</head>
+<body>
+<h2>Hello <span th:text="${user}"></span></h2>
+Choose month : <select name="month" th:field="*{months}">
+	<option th:each="month: ${months}" 
+		th:value="${month}"
+		th:text="${month}"
+	/>
+</select>
+</body>
+</html>
