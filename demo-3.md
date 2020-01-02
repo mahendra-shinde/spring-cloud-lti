@@ -2,7 +2,7 @@
 
 1.  Create a new model java class `product` in package `com.mahendra.demo.models`
 
-    ```
+    ```java
     public class Product{
     private String name;
 	private Integer id;
