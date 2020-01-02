@@ -56,33 +56,33 @@
 
 > NOTE: Additional mvnw commands:
 
-    ```yml
-    mvnw.cmd package : Clean->Compile->Test->Package JAR/WAR
-    mvnw.cmd clean	:  Clean previously created JAR/WAR & Classes
-    mvnw.cmd compile : Compile all JAVA files into .class
-    mvnw.cmd test :	   Run all Test cases
+```yml
+mvnw.cmd package : Clean->Compile->Test->Package JAR/WAR
+mvnw.cmd clean	:  Clean previously created JAR/WAR & Classes
+mvnw.cmd compile : Compile all JAVA files into .class
+mvnw.cmd test :	   Run all Test cases
 
-    ### Run the Spring boot application
-    mvnw.cmd spring-boot:run
-    ### To Stop , press CTRL+C
-    ```
+### Run the Spring boot application
+mvnw.cmd spring-boot:run
+### To Stop , press CTRL+C
+```
 
 > NOTE : Spring boot project structure
 
-    ```yaml
-    src:        Source code for entire project
-    target:     Binaries (.class, .jar, .war) Build artifacts
-    
-    src\main\java:      The Main source code files (JAVA files)
-    src\main\resources: The Non-Java files (eg, application.properties)
+```yaml
+src:        Source code for entire project
+target:     Binaries (.class, .jar, .war) Build artifacts
 
-    src\main\resources\application.properties:  The only place where DEFAULT configuration could be OVERRIDDEN!
+src\main\java:      The Main source code files (JAVA files)
+src\main\resources: The Non-Java files (eg, application.properties)
 
-    src\test\java:      All the Unit/Integration test cases
-    src\test\resources: All the resources required by test cases
+src\main\resources\application.properties:  The only place where DEFAULT configuration could be OVERRIDDEN!
 
-    pom.xml:            The maven `Project Object Model` file. All dependencies are defined here!
+src\test\java:      All the Unit/Integration test cases
+src\test\resources: All the resources required by test cases
 
-    mvnw:               Maven wrapper for Unix/Linux OS
-    mvnw.cmd:           Maven wrapper for Windows OS
-    ```
+pom.xml:            The maven `Project Object Model` file. All dependencies are defined here!
+
+mvnw:               Maven wrapper for Unix/Linux OS
+mvnw.cmd:           Maven wrapper for Windows OS
+```
