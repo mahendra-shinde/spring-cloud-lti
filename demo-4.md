@@ -2,7 +2,7 @@
 
 1.  Create new spring-boot-starter project
 
-   ```yaml
+    ```yaml
     Name:   demo-4
     Type:   Maven
     Packaging:  Jar
@@ -58,8 +58,13 @@
 4.  Run application as `Spring Boot App` and Test using POSTMAN
 
     4.1 GET http://localhost:8081/emps
+    
     4.2 POST http://localhost:8081/emps
+    
     4.3 PUT http://localhost:8081/emps
+    
     4.4 DELETE http://localhost:8081/emps
+    
     4.5 OPTIONS http://localhost:8081/emps
+    
     4.6 HEAD http://localhost:8081/emps
