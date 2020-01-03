@@ -85,6 +85,29 @@
                 return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
             }
         }
+        // PUT http://localhost:8081/products/update
+        @PutMapping(value="/update",consumes="application/json")
+        public ResponseEntity<String> update(@RequestBody Product product){
+            try {
+                productRepo.update(product);
+                return new ResponseEntity<>("Saved !",HttpStatus.CREATED);
+                }catch(RuntimeException ex) {
+                    System.out.println(ex.getMessage());
+                    return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+                }
+        }
+        
+        // DELETE http://localhost:8081/products/{id}
+        @DeleteMapping(value="/{id}")
+        public ResponseEntity<String> deleteById(@PathVariable int id){
+            try {
+                productRepo.delete(id);
+                return new ResponseEntity<String>("Record Deleted",HttpStatus.OK);
+            }catch(Exception ex) {
+                ex.printStackTrace();
+                return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+            }
+        }
         
     }
     ```
@@ -107,3 +130,44 @@
     ```
 
     click 'Send' button TWICE!
+
+7.  Test the PUT operation (Update)
+
+    Create a new request in Postman 
+    
+    ```
+    Request Type: PUT
+    URL:        http://localhost:8081/products/update
+    Body:       Select 'ROW' and then 'Application/JSON'
+    ```
+    
+    Body text:       
+
+    ```json
+    {
+        "name": "Parle G",
+        "id": 104,
+        "description": "Gluco Buicuites",
+        "price": 5
+    }
+    ```
+
+8.  Test the GET operation (Retreive)
+
+    Create a new request in Postman 
+    
+    ```
+    Request Type: GET
+    URL:        http://localhost:8081/products/find/104
+    Accept:     application/json
+    ```
+
+9.  Test the DELETE operation 
+
+    Create a new request in Postman 
+    
+    ```
+    Request Type: DELETE
+    URL:        http://localhost:8081/products/104
+    Accept:     application/json
+    ```

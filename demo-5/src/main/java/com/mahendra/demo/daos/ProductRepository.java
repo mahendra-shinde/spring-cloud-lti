@@ -46,7 +46,9 @@ public class ProductRepository {
 		if(temp==null) {
 			throw new RuntimeException("Product does not exists!");
 		}
-		temp = product; 
+		temp.setDescription(product.getDescription());
+		temp.setPrice(product.getPrice());
+		temp.setName(product.getName());
 	}	
 	
 	public void delete(int id) {

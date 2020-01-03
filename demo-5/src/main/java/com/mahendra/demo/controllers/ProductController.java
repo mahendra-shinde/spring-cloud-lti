@@ -30,6 +30,28 @@ public class ProductController {
 			return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
 		}
 	}
+	// PUT http://localhost:8081/products/update
+	@PutMapping(value="/update",consumes="application/json")
+	public ResponseEntity<String> update(@RequestBody Product product){
+		try {
+			productRepo.update(product);
+			return new ResponseEntity<>("Saved !",HttpStatus.CREATED);
+			}catch(RuntimeException ex) {
+				System.out.println(ex.getMessage());
+				return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+			}
+	}
 	
-
+	// DELETE http://localhost:8081/products/{id}
+	@DeleteMapping(value="/{id}")
+	public ResponseEntity<String> deleteById(@PathVariable int id){
+		try {
+			productRepo.delete(id);
+			return new ResponseEntity<String>("Record Deleted",HttpStatus.OK);
+		}catch(Exception ex) {
+			ex.printStackTrace();
+			return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+	}
+	
 }
