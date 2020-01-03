@@ -92,7 +92,9 @@
 6.  Run application as Spring Boot App and Test using Postman.
 
     URL:        http://localhost:8081/products/save
+
     Body:       Select 'ROW' and then 'Application/JSON'
+    
     Body text:       
 
     ```json
