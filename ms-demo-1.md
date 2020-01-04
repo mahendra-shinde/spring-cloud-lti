@@ -47,4 +47,3 @@
 6.  Now, Run your application as `Spring boot app` and then 
     connect your web-browser at http://localhost:8761
 
-    
