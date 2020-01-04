@@ -18,6 +18,7 @@
 2.  Add following starter-poms (dependencies)
 
     2.1     Spring-Web
+    
     2.2     Eureka-Discovery-Client    
 
 3.  Add following properties inside `application.properties` file
