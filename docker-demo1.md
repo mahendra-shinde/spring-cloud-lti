@@ -45,9 +45,33 @@
 
     ```cmd
     $ docker login
-    Username: mahendrshinde
+    Username: [YOURDOCKER-ID-WITHOUT-BRACKETS]
     Password:        
-    $ docker push mahendrshinde/mynginx:1
+    $ docker push [YOURDOCKER-ID-WITHOUT-BRACKETS]/mynginx:1
     ```
 
 9.  Visit hub.docker.com to view your newly uploaded docker image
+
+10. Stop all RUNNING containers at ONCE (Only in POWERSHELL prompt)
+
+    ```pwsh
+    $ docker stop $(docker ps -q)
+    ```
+
+11. Now, download an image and run as container
+
+    ```pwsh
+    $ docker run --name w2 -d -p 8080:80 mahendrshinde/mynginx:1
+    ```
+
+    NOTE: Use the exact same command to run MY docker image on your system
+
+12. Check Web Browser at address http://localhost:8080/
+
+13. Stop and delete all containers now
+
+    ```pwsh
+    $ docker stop $(docker ps -q)
+    $ docker rm $(docker ps -aq)
+    ```
+    NOTE: if you get an error stating AT LEAST ONE ARGUMENT REQUIRED, dont panick, it means STOP and RM failed as there were no containers to stop/delete!
